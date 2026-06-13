@@ -1,0 +1,462 @@
+Submission: HR Cost Intelligence Engine
+
+Project Name
+
+FinOps AI
+
+Attendee Name
+
+Macherla Yogesh
+
+Problem Statement Selected
+
+HR Cost Intelligence / Meeting-to-Project Cost Attribution
+
+Organizations lack visibility into how meeting time translates into real HR spend per project. Timesheets are manual and unreliable, while calendar data already captures where people spend their time. This problem requires connecting calendar meetings → AI-powered project attribution → employee cost mapping → executive dashboards and anomaly detection.
+
+
+
+Project Description
+
+HR Cost Intelligence Engine is an AI-powered FinOps platform that answers one critical business question: “What are our meetings actually costing us, and which projects are driving that spend?”
+
+The platform automatically syncs Google Calendar meetings, uses AI (Google Gemini) to attribute each meeting to one or more projects, calculates cost using employee hourly rates, and surfaces everything on an executive dashboard — with anomaly flags, forecasts, and a voice-enabled AI assistant.
+
+Demo login: admin@demo.com / demo1234 (works without Google OAuth via seeded data)
+
+
+
+Why This Solution Is Useful
+
+
+
+
+
+
+
+Business Pain
+
+
+
+How We Solve It
+
+
+
+
+
+No project-level HR cost visibility
+
+
+
+Live dashboard with KPIs, trends, and drill-down by role/department
+
+
+
+
+
+Manual timesheets are inaccurate
+
+
+
+Calendar becomes the source of truth
+
+
+
+
+
+Budget overruns discovered too late
+
+
+
+Anomaly detection (overrun, leakage, bloat, unattributed)
+
+
+
+
+
+Low-confidence AI decisions
+
+
+
+Human-in-the-loop review queue with approve/override
+
+
+
+
+
+Leadership needs quick answers
+
+
+
+AI Copilot + FinOps Voice Assistant for NL queries and navigation
+
+Target users: HR, Finance, Engineering Managers, and Leadership teams at mid-to-large organizations.
+
+
+
+Approach
+
+1. Data ingestion
+
+
+
+
+
+Google Calendar OAuth + hourly sync scheduler
+
+
+
+Configurable sync window (7–90 days)
+
+
+
+Demo mode with 17 seeded meetings (no OAuth required for judges)
+
+2. AI attribution
+
+
+
+
+
+Gemini AI classifies meetings to projects with confidence scores
+
+
+
+Keyword fallback when API key is unavailable
+
+
+
+Multi-project split support (allocationPct for cross-functional meetings)
+
+
+
+Meetings below 70% confidence → review queue for human approval
+
+3. Cost engine
+
+
+
+
+
+Meeting Cost = duration × Σ(attendee hourly rates) × allocation %
+
+
+
+ROI score heuristic per meeting
+
+
+
+Role and department rollups for project drill-down
+
+4. Intelligence layer
+
+
+
+
+
+4-rule anomaly detection engine
+
+
+
+Rule-based recommendations and 4-week cost forecasts
+
+
+
+AI Copilot for natural-language Q&A with chart output
+
+
+
+FinOps Assistant (floating chatbot) with text + voice — navigate app, sync calendar, export CSV
+
+5. Governance
+
+
+
+
+
+RBAC: ADMIN / HR / FINANCE / MANAGER / VIEWER
+
+
+
+Salary rate masking by role
+
+
+
+Full audit log for attribution overrides and exports
+
+
+
+Tools and Technologies Used
+
+
+
+
+
+
+
+Layer
+
+
+
+Stack
+
+
+
+
+
+Frontend
+
+
+
+React 19, TypeScript, Vite, Tailwind CSS, Recharts, Framer Motion
+
+
+
+
+
+Backend
+
+
+
+Node.js, Express, TypeScript, Prisma ORM
+
+
+
+
+
+Database
+
+
+
+PostgreSQL
+
+
+
+
+
+AI
+
+
+
+Google Gemini (meeting attribution + copilot Q&A)
+
+
+
+
+
+Integrations
+
+
+
+Google Calendar API, Google OAuth 2.0
+
+
+
+
+
+Voice
+
+
+
+Web Speech API (browser-native STT + TTS)
+
+
+
+
+
+Auth
+
+
+
+JWT, bcrypt
+
+
+
+
+
+DevOps
+
+
+
+Docker Compose (Postgres + optional full stack)
+
+
+
+What Is Already Working
+
+
+
+
+
+✅ Google Calendar OAuth + sync API + sync status dashboard
+
+
+
+✅ AI meeting attribution with confidence scoring and review queue
+
+
+
+✅ Employee directory with hourly rates and bulk rate updates
+
+
+
+✅ Executive dashboard (KPIs, cost trends, project breakdown)
+
+
+
+✅ Project drill-down by role/department with meeting ROI
+
+
+
+✅ Anomaly detection (4 types) with dismiss flow
+
+
+
+✅ AI Copilot — NL queries with bar chart responses
+
+
+
+✅ FinOps Voice Assistant — navigate, query, sync, export via text/voice
+
+
+
+✅ RBAC with rate masking and audit logs
+
+
+
+✅ CSV export (projects, anomalies, employees)
+
+
+
+✅ Recommendations and 4-week forecasts
+
+
+
+✅ Demo seed data — fully functional without external API keys
+
+
+
+What We Plan to Improve Next
+
+
+
+
+
+Outlook / Microsoft Graph calendar integration
+
+
+
+HRMS / payroll connector for live rate sync
+
+
+
+Slack/email anomaly notifications
+
+
+
+Vector DB RAG for richer copilot context
+
+
+
+SSO (Google/Microsoft login)
+
+
+
+Scheduled executive email digests
+
+
+
+Production deployment (Railway / Vercel / AWS)
+
+
+
+How to Run Locally
+
+# 1. Start database
+docker compose up -d postgres
+
+# 2. Backend
+cd backend
+npx prisma db push
+npm run prisma:seed
+npm run dev
+
+# 3. Frontend (new terminal)
+cd ..
+npm install
+npm run dev
+
+Open http://localhost:5173 → Sign in with admin@demo.com / demo1234
+
+
+
+Architecture
+
+React Frontend ──JWT/REST──► Express Backend ──► PostgreSQL
+  ├── Landing Page                    ├── Google Calendar API
+  ├── Executive Dashboard               ├── Gemini AI (attribution)
+  ├── AI Review Queue                   ├── Anomaly / Forecast / Copilot
+  ├── FinOps Voice Assistant            └── Demo seed (17 meetings)
+  └── AI Copilot Page
+
+
+
+Links
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GitHub Project Repository
+
+
+
+https://github.com/Yogesh-101/hr-cost-intelligence-engine
+
+
+
+
+
+GitHub Username
+
+
+
+@Yogesh-101
+
+
+
+
+
+LinkedIn Profile
+
+
+
+https://www.linkedin.com/in/macherla-yogesh-02a5422bb/
+
+
+
+Work in Progress Disclaimer
+
+Core MVP is fully functional with demo data. Google Calendar OAuth and Gemini AI require environment keys for live production use. Outlook integration and HRMS connectors are planned for V2.
+
+
+
+Pull Request Title (for buildathon repo)
+
+Submission: FinOps AI - Macherla Yogesh
+
+
+
+Built for React Hyderabad × Masters' Union AI Buildathon — June 2026
