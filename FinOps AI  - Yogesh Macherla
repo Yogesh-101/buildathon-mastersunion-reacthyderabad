@@ -1,4 +1,4 @@
-Submission: HR Cost Intelligence Engine
+Submission: FinOps AI
 
 Project Name
 
@@ -14,17 +14,13 @@ HR Cost Intelligence / Meeting-to-Project Cost Attribution
 
 Organizations lack visibility into how meeting time translates into real HR spend per project. Timesheets are manual and unreliable, while calendar data already captures where people spend their time. This problem requires connecting calendar meetings → AI-powered project attribution → employee cost mapping → executive dashboards and anomaly detection.
 
-
-
 Project Description
 
-HR Cost Intelligence Engine is an AI-powered FinOps platform that answers one critical business question: “What are our meetings actually costing us, and which projects are driving that spend?”
+HR Cost Intelligence Engine is an AI-powered FinOps platform that answers one critical business question: "What are our meetings actually costing us, and which projects are driving that spend?"
 
 The platform automatically syncs Google Calendar meetings, uses AI (Google Gemini) to attribute each meeting to one or more projects, calculates cost using employee hourly rates, and surfaces everything on an executive dashboard — with anomaly flags, forecasts, and a voice-enabled AI assistant.
 
 Demo login: admin@demo.com / demo1234 (works without Google OAuth via seeded data)
-
-
 
 Why This Solution Is Useful
 
@@ -91,8 +87,6 @@ Leadership needs quick answers
 AI Copilot + FinOps Voice Assistant for NL queries and navigation
 
 Target users: HR, Finance, Engineering Managers, and Leadership teams at mid-to-large organizations.
-
-
 
 Approach
 
@@ -183,8 +177,6 @@ Salary rate masking by role
 
 
 Full audit log for attribution overrides and exports
-
-
 
 Tools and Technologies Used
 
@@ -280,8 +272,6 @@ DevOps
 
 Docker Compose (Postgres + optional full stack)
 
-
-
 What Is Already Working
 
 
@@ -334,8 +324,6 @@ What Is Already Working
 
 ✅ Demo seed data — fully functional without external API keys
 
-
-
 What We Plan to Improve Next
 
 
@@ -368,8 +356,6 @@ Scheduled executive email digests
 
 Production deployment (Railway / Vercel / AWS)
 
-
-
 How to Run Locally
 
 # 1. Start database
@@ -388,8 +374,6 @@ npm run dev
 
 Open http://localhost:5173 → Sign in with admin@demo.com / demo1234
 
-
-
 Architecture
 
 React Frontend ──JWT/REST──► Express Backend ──► PostgreSQL
@@ -398,8 +382,6 @@ React Frontend ──JWT/REST──► Express Backend ──► PostgreSQL
   ├── AI Review Queue                   ├── Anomaly / Forecast / Copilot
   ├── FinOps Voice Assistant            └── Demo seed (17 meetings)
   └── AI Copilot Page
-
-
 
 Links
 
@@ -428,6 +410,7 @@ https://github.com/Yogesh-101/FinOps-AI
 
 
 
+
 GitHub Username
 
 
@@ -444,18 +427,12 @@ LinkedIn Profile
 
 https://www.linkedin.com/in/macherla-yogesh-02a5422bb/
 
-
-
 Work in Progress Disclaimer
 
 Core MVP is fully functional with demo data. Google Calendar OAuth and Gemini AI require environment keys for live production use. Outlook integration and HRMS connectors are planned for V2.
 
-
-
-Pull Request Title (for buildathon repo)
+Pull Request Title
 
 Submission: FinOps AI - Macherla Yogesh
-
-
 
 Built for React Hyderabad × Masters' Union AI Buildathon — June 2026
